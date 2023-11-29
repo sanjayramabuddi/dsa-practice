@@ -1,23 +1,21 @@
 #include <iostream>
+#include <limits.h>
 using namespace std;
 
-int main(){
-    int arr[] = {2, 4, 6, 1, 3, 7, 9, 12, 56, 43, 21};
-    int size = 11;
+int main() {
+  int arr[] = {50, 84, 50, 489, 9, 5, 948, 1, 5, 2, 15, 65, 4, 47, 5, 48};
+  int size = sizeof(arr)/sizeof(int);
+  int min = INT_MAX;
+  int max = INT_MIN;
 
-    // initialse the maxi variable with the
-    // minimum possible integer value
-
-    int maxi = INT_MIN;
-    int mini = INT_MAX;
-
-    for (int i = 0; i < size; i++)
-    {
-        if (arr[i] < mini)
-        {
-            // found a number gretaer than maxi, update maxi
-            mini = arr[i];
-        }
+  for(int i = 0; i < size; i++) {
+    if(arr[i] <  min) {
+      min = arr[i];
     }
-    cout << "minimum number is " << mini << endl;
+    else if(arr[i] > max){
+      max = arr[i];
+    }
+  }   
+   cout << "minimum number is " << min << endl;
+   cout << "maximum number is " << max << endl;
 }
